@@ -1,0 +1,23 @@
+
+TELEGRAM ABUSE REPORT
+
+Link:
+cd
+
+Violation:
+Privacy violation / Doxxing
+
+Severity:
+Critical
+
+Confidence:
+90%
+
+Policy:
+Requires manual review
+
+Description:
+This content appears to contain non-consensual sexual material
+and violates Telegram rules.
+
+Please review and take action.

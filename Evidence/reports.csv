@@ -1,0 +1,5 @@
+Timestamp,Link,Violation,Severity,Confidence,Policy
+2026-01-05 12:38:14,cd,Privacy violation / Doxxing,Critical,90,Requires manual review
+2026-01-05 12:39:40,https://t.me/storiscary/5739,Privacy violation / Doxxing,Critical,90,Requires manual review
+2026-01-05 15:05:00,https://t.me/kidramgp/2865161,Non-consensual sexual content,Critical,90,Violates Telegram Pornography and Privacy Policies
+2026-01-05 18:43:46,https://t.me/kidramgp/2865165,Impersonation / Deepfake without consent,Critical,90,Requires manual review

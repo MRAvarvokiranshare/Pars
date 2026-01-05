@@ -1,0 +1,23 @@
+
+TELEGRAM ABUSE REPORT
+
+Link:
+https://t.me/goodboygap/644961
+
+Violation:
+Unknown
+
+Severity:
+Low
+
+Confidence:
+0%
+
+Policy:
+Requires manual review
+
+Description:
+This content appears to contain non-consensual sexual material
+and violates Telegram rules.
+
+Please review and take action.

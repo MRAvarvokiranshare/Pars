@@ -1,0 +1,55 @@
+    print("\n⏳ در حال تحلیل محتوا...\n")
+
+    # تحلیل خودکار با متن خالی
+    auto_result = classify("")
+
+    # اگر گزینه حساس انتخاب شده، اولویت با کاربر
+    if selected_violation in [
+        "Non-consensual sexual content",
+        "Impersonation / Deepfake without consent",
+        "Privacy violation / Doxxing"
+    ]:
+        violation = selected_violation
+        severity = "Critical"
+        confidence = 90
+    else:
+        violation = auto_result["violation"]
+        severity = auto_result["severity"]
+        confidence = auto_result["confidence"]
+
+    result = {
+        "violation": violation,
+        "severity": severity,
+        "confidence": confidence,
+        "language": auto_result["language"]
+    }
+
+    policy = map_to_policy(result["violation"])
+    report_text = generate_report(link, result, policy)
+
+    # نمایش رنگی نتیجه
+    print(Fore.GREEN + "\n✅ نتیجه نهایی:\n")
+    print(Fore.YELLOW + f"نوع تخلف: {result['violation']}")
+    print(Fore.YELLOW + f"شدت: {result['severity']}")
+    print(Fore.YELLOW + f"اعتماد: {result['confidence']} %")
+    print(Fore.YELLOW + f"قانون مرتبط: {policy}")
+
+    # متن گزارش رنگی
+    print(Fore.CYAN + "\n📄 متن گزارش آماده:\n")
+    print(Fore.CYAN + "-----------------------------------")
+    print(Fore.BLUE + report_text)  # متن ریپورت آبی
+    print(Fore.CYAN + "-----------------------------------")
+
+    # ایمیل آماده
+    choice = input(Fore.GREEN + "\n📨 ایمیل گزارش آماده شد.\nاگر خودکار باز نشد، لینک آن را در مرورگر باز کنید.\nمی‌خواهید باز شود؟ (y/n): " + Style.RESET_ALL).lower()
+
+    if choice == "y":
+        open_email_client(report_text)
+    else:
+        print(Fore.RED + "❌ ایمیل باز نشد.")
+
+    print(Fore.CYAN + "\n✨ پایان اجرای PARS")
+
+
+if __name__ == "__main__":
+    main()
